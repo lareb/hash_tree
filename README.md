@@ -44,3 +44,7 @@ Get all Urls
 ```bash
 curl -i -H "Accept: application/vnd.api+json" "http://localhost:3000/api/v1/urls"
 ```
+
+## Postman collection for more APIs
+
+https://www.getpostman.com/collections/8f36ab0950899a44f50a
