@@ -1,24 +1,46 @@
-# README
+# HashTree: Simple Demo application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Follow below instructions to setup the application
 
-Things you may want to cover:
+## Initial Steps to create this app
 
-* Ruby version
+### Requirement
+* Ruby 2.4.0
+* Rails 5.1.6
+* PostgreSQL
 
-* System dependencies
+### Create a new Rails application
 
-* Configuration
+```bash
+$>git clone git@github.com:lareb/hash_tree.git
+```
 
-* Database creation
+### Bundle Install
 
-* Database initialization
+```bash
+bundle install
+```
 
-* How to run the test suite
+### Create the databases
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rake db:create
+rake db:migrate
+```
 
-* Deployment instructions
+## Launch the app
 
-* ...
+```bash
+rails server
+```
+## API End points
+
+Create a new Url
+```bash
+curl -i -H "Accept: application/vnd.api+json" -H 'Content-Type:application/vnd.api+json' -X POST -d ' {"data": {"type":"urls", "attributes":{"url":"https://github.com/lareb/hash_tree"}}}' http://localhost:3000/api/v1/urls.json
+```
+
+Get all Urls
+```bash
+curl -i -H "Accept: application/vnd.api+json" "http://localhost:3000/api/v1/urls"
+```
